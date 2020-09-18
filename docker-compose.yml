@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+   yuval_workspace:
+      image: "jupyter/datascience-notebook"
+      container_name: yuval_workspace
+      command: "jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/opt/code'"
+      environment:
+         - PYTHONPATH=$PYTHONPATH:/opt/code
+      ports:
+         - '8886:8888'
+      volumes:
+         - C:/Users/Yuval/Documents/workspace/YuvalBlau:/opt/code
