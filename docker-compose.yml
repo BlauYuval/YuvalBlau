@@ -3,7 +3,7 @@ services:
    yuval_workspace:
       image: "jupyter/datascience-notebook"
       container_name: yuval_workspace
-      command: "jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/opt/code'"
+      command: "jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir='/opt/code' --pip install -r requirements.txt --julia requirements.jl"
       environment:
          - PYTHONPATH=$PYTHONPATH:/opt/code
       ports:
